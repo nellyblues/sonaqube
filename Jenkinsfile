@@ -19,19 +19,19 @@ pipeline {
         sh 'mvn package'
       }
     }
-      stage('unittest'){
+    stage('unittest'){
         steps{
             sh 'mvn test'
         }
     }
-    stage('sonarscanner'){
-      steps{
-      sh "mvn clean verify sonar:sonar \
+    stage('codequality'){
+        steps{
+       sh 'mvn clean verify sonar:sonar \
   -Dsonar.projectKey=team5codereview \
   -Dsonar.projectName='team5codereview' \
-  -Dsonar.host.url=http://ec2-107-22-47-64.compute-1.amazonaws.com:9000 \
-  -Dsonar.token=sqp_0e5ca3fb66d661c1efd895d8370236860af9bfb6"
-      }
+  -Dsonar.host.url=http://ec2-3-95-62-252.compute-1.amazonaws.com:9000 \
+  -Dsonar.token=sqp_10a8b16912ece9482f3f61cd9487910c91501dab'
+        }
     }
   }
 }
