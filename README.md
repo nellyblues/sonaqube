@@ -1,1 +1,1 @@
-# sonaqube
+# maven-etech-application
